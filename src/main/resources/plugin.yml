@@ -1,0 +1,7 @@
+name: MHPlotModeration
+main: com.minehut.moderators.plotmoderation.PlotModeration
+version: 1.0.0
+api-version: 1.21
+description: Used to make plot moderation easier on the Minehut build contest server.
+depend:
+  - PlotSquared
