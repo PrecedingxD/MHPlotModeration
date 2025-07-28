@@ -9,5 +9,5 @@ This plugin was created to assist in moderation with plots on Minehut's build co
 # Permissions:
 - `mhplots.mod` Allows users with this permission to use `/plotmod` and get notified about new plots in the queue when joining the server.
 
-# Screenshots
+# Screenshots:
 ![img.png](images/img.png)
