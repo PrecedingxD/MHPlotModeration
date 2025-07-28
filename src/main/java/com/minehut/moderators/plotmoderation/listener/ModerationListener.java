@@ -2,7 +2,7 @@ package com.minehut.moderators.plotmoderation.listener;
 
 import com.minehut.moderators.plotmoderation.PlotModeration;
 import com.minehut.moderators.plotmoderation.flag.UnreviewedChangesFlag;
-import com.minehut.moderators.plotmoderation.utils.CC;
+import com.minehut.moderators.plotmoderation.utils.text.CC;
 import com.plotsquared.bukkit.util.BukkitUtil;
 import com.plotsquared.core.location.Location;
 import com.plotsquared.core.plot.Plot;
@@ -28,7 +28,7 @@ public class ModerationListener implements Listener {
                     .count();
 
             if(totalUnreviewedPlots > 0) {
-                Bukkit.getServer().getScheduler().runTaskLater(PlotModeration.getInstance(), () -> player.sendMessage(CC.component("<prefix><white>There are currently <mh_blue>" + totalUnreviewedPlots + "</mh_blue> plots awaiting review. Type <mh_blue>/moderation next</mh_blue> to teleport to the next plot in the queue.</white>")), 20L);
+                Bukkit.getServer().getScheduler().runTaskLater(PlotModeration.getInstance(), () -> player.sendMessage(CC.component("<prefix><white>There are currently <mh_blue>" + totalUnreviewedPlots + "</mh_blue> plots awaiting review. Type <mh_blue>/plotmod next</mh_blue> to teleport to the next plot in the queue.</white>")), 20L);
             }
         }
     }

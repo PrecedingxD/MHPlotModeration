@@ -1,4 +1,4 @@
-package com.minehut.moderators.plotmoderation.utils;
+package com.minehut.moderators.plotmoderation.utils.text;
 
 import lombok.experimental.UtilityClass;
 import net.kyori.adventure.text.Component;
