@@ -80,7 +80,6 @@ public class ModerationCommand {
 
     @Command("list [page]")
     @CommandDescription("View a list of all plots in the moderation queue")
-    @SuppressWarnings("DataFlowIssue")
     public void list(CommandSender sender, @Argument("page") Integer rawPage) {
         final int page = rawPage == null ? 1 : rawPage;
         final List<Plot> plots = PlotQuery.newQuery().allPlots().asList()
