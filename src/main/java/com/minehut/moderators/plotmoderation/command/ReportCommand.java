@@ -22,6 +22,7 @@ import org.incendo.cloud.annotations.Permission;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -116,6 +117,7 @@ public class ReportCommand {
                 ).toList()
         ).thenAccept((mappings) -> {
             final Map<UUID, UUIDMapping> uuidMappings = mappings.stream()
+                    .distinct()
                     .collect(Collectors.toMap(UUIDMapping::uuid, (mapping) -> mapping));
             final Book.Builder builder = Book.builder();
 
@@ -160,6 +162,15 @@ public class ReportCommand {
             }
 
             Bukkit.getServer().getScheduler().runTask(PlotModeration.getInstance(), () -> player.openBook(builder));
+        }).exceptionally((ex) -> {
+            player.sendMessage(CC.component("<prefix><red>An error occurred. Please notify the developer.</red>"));
+            PlotModeration.getInstance().getLogger().log(
+                    Level.SEVERE,
+                    "Failed to open plot reports book",
+                    ex
+            );
+
+            return null;
         });
     }
 
