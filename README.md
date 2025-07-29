@@ -6,6 +6,8 @@ This plugin was created to assist in moderation with plots on Minehut's build co
 - `/plotmod next` Teleports you to the next plot in the moderation queue.
 - `/plotmod remove` Removes the plot that you're standing in from the moderation queue.
 - `/plotmod list [page]` Lists all of the plots that are currently in the moderation queue.
+- `/plotmod report list` View a list of all plot reports.
+- `/plotreport <reason>` Report a plot for a given reason.
 
 # Permissions:
 - `mhplots.mod` Allows users with this permission to use `/plotmod` and get notified about new plots in the queue when joining the server.
