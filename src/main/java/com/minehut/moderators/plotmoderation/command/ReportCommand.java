@@ -136,9 +136,11 @@ public class ReportCommand {
                         .append(Component.text(targetName))
                         .appendNewline()
                         .appendNewline()
-                        .append(CC.component("<blue>Reason:</blue>"))
+                        .append(CC.component("<blue>Reason</blue>"))
                         .appendNewline()
-                        .append(Component.text(report.reason()))
+                        .append(CC.component("<gray>(Hover)</gray>")
+                                .hoverEvent(HoverEvent.showText(Component.text(report.reason())))
+                        )
                         .appendNewline()
                         .appendNewline()
                         .append(CC.component("<#5dc9bd>[REVIEW]</#5dc9bd>")
@@ -152,7 +154,7 @@ public class ReportCommand {
                                     PlotModeration.getInstance().getReportManager().deleteReport(report);
                                     player.sendMessage(CC.component("<prefix><green>Plot report successfully deleted.</green>"));
 
-                                    if(reports.size() > 1) {
+                                    if (reports.size() > 1) {
                                         list(sender);
                                     }
                                 }))
