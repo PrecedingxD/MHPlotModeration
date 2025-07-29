@@ -45,7 +45,7 @@ public class ModerationCommand {
             return;
         }
 
-        PlotSquared.get().getImpromptuUUIDPipeline().getSingle(Objects.requireNonNull(nextPlot.getOwner()), (username, t) -> nextPlot.getCenter((location) -> {
+        PlotSquared.get().getImpromptuUUIDPipeline().getSingle(Objects.requireNonNull(nextPlot.getOwner()), (username, t) -> nextPlot.getHome((location) -> {
             player.teleport(BukkitUtil.adapt(location));
             player.sendMessage(CC.component("<prefix><white>You have been teleported to <mh_blue>" + username + "</mh_blue>'s plot. Click this message to mark it as reviewed and in compliance with the rules.</white>")
                     .hoverEvent(HoverEvent.showText(CC.component("<gray>Click to mark this plot as reviewed and in compliance with the rules.</gray>")))
