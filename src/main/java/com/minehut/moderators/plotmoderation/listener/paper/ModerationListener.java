@@ -23,7 +23,7 @@ public class ModerationListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
 
-        if (player.hasPermission(PlotModeration.MODERATOR_PERMISSION)) {
+        if (PlotModeration.getInstance().getSettings().queue() && player.hasPermission(PlotModeration.MODERATOR_PERMISSION)) {
             final int totalUnreviewedPlots = (int) PlotQuery.newQuery().allPlots().asList()
                     .stream()
                     .filter((plot) -> plot.getFlag(UnreviewedChangesFlag.class) && plot.getOwner() != null)
@@ -41,7 +41,7 @@ public class ModerationListener implements Listener {
         final Location location = BukkitUtil.adapt(event.getBlock().getLocation());
         final Plot plot = location.getPlotAbs();
 
-        if (plot != null && plot.isAdded(player.getUniqueId()) && !plot.getFlag(UnreviewedChangesFlag.class)) {
+        if (PlotModeration.getInstance().getSettings().queue() && plot != null && plot.isAdded(player.getUniqueId()) && !plot.getFlag(UnreviewedChangesFlag.class)) {
             plot.setFlag(UnreviewedChangesFlag.class, "true");
         }
     }
@@ -52,7 +52,7 @@ public class ModerationListener implements Listener {
         final Location location = BukkitUtil.adapt(event.getBlock().getLocation());
         final Plot plot = location.getPlotAbs();
 
-        if (plot != null && plot.isAdded(player.getUniqueId()) && !plot.getFlag(UnreviewedChangesFlag.class)) {
+        if (PlotModeration.getInstance().getSettings().queue() && plot != null && plot.isAdded(player.getUniqueId()) && !plot.getFlag(UnreviewedChangesFlag.class)) {
             plot.setFlag(UnreviewedChangesFlag.class, "true");
         }
     }
