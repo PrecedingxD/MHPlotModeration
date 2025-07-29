@@ -12,6 +12,8 @@ import java.util.Objects;
 @UtilityClass
 public class CC {
 
+    public static final TextColor MH_BLUE_COLOR = TextColor.fromHexString("#34c0eb");
+
     private Component rawComponent(String text) {
         return MiniMessage.miniMessage().deserialize(text);
     }
@@ -21,7 +23,7 @@ public class CC {
                 text,
                 TagResolver.resolver(
                         "mh_blue",
-                        Tag.styling(Objects.requireNonNull(TextColor.fromHexString("#34c0eb")))
+                        Tag.styling(Objects.requireNonNull(MH_BLUE_COLOR))
                 ),
                 TagResolver.resolver(
                         "prefix",

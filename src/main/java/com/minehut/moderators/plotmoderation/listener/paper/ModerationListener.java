@@ -1,9 +1,11 @@
-package com.minehut.moderators.plotmoderation.listener;
+package com.minehut.moderators.plotmoderation.listener.paper;
 
 import com.minehut.moderators.plotmoderation.PlotModeration;
 import com.minehut.moderators.plotmoderation.flag.UnreviewedChangesFlag;
 import com.minehut.moderators.plotmoderation.utils.text.CC;
 import com.plotsquared.bukkit.util.BukkitUtil;
+import com.plotsquared.core.PlotSquared;
+import com.plotsquared.core.events.PlotDeleteEvent;
 import com.plotsquared.core.location.Location;
 import com.plotsquared.core.plot.Plot;
 import com.plotsquared.core.util.query.PlotQuery;
